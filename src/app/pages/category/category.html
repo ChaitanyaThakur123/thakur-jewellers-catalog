@@ -1,0 +1,62 @@
+<div class="gallery-page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+
+    <a routerLink="/" class="back-btn">
+      ← Back To Home
+    </a>
+
+    <h1>
+      {{ category | titlecase }} Collection
+    </h1>
+
+  </div>
+
+
+  <!-- IMAGE GRID -->
+  <div class="gallery-grid">
+
+    <div
+      class="gallery-card"
+      *ngFor="let image of images"
+      (click)="openImage(image)"
+    >
+
+      <img [src]="image" alt="Jewellery Image" />
+
+    </div>
+
+  </div>
+
+
+  <!-- FULLSCREEN VIEWER -->
+  <div
+    class="image-viewer"
+    *ngIf="isViewerOpen"
+  >
+
+    <button
+      class="close-viewer"
+      (click)="closeViewer()"
+    >
+      ×
+    </button>
+
+      <!-- DOWNLOAD BUTTON -->
+    <a
+      [href]="selectedImage"
+      download
+      class="download-btn"
+    >
+      ⬇ Download
+    </a>
+    
+    <img
+      [src]="selectedImage"
+      class="viewer-image"
+    />
+
+  </div>
+
+</div>
