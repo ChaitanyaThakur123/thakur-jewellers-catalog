@@ -22,23 +22,26 @@ export class HomeComponent {
   ];
 
   ladiesMenu = [
-    { name: 'Long Poth', route: '/gallery/ladies/long-poth' },
-    { name: 'Short Poth', route: '/gallery/ladies/short-poth' },
-    { name: 'Har', route: '/gallery/ladies/har' },
-    { name: 'Necklace', route: '/gallery/ladies/necklace' },
-    { name: 'Earrings', route: '/gallery/ladies/earrings' },
+    { name: 'Long Mangalsutra', route: '/gallery/ladies/long-poth' },
+    { name: 'Short Mangalsutra', route: '/gallery/ladies/short-poth' },
     { name: 'Bracelet', route: '/gallery/ladies/bracelet' },
     { name: 'Bangdya', route: '/gallery/ladies/bangdya' },
     { name: 'Baju Bandha', route: '/gallery/ladies/baju-bandha' },
     { name: 'Chains', route: '/gallery/ladies/chains' },
+     { name: 'Chapla Har', route: '/gallery/ladies/chapla-har' },
+      { name: 'Choker Har', route: '/gallery/ladies/choker-har' },
+     { name: 'Couple Ring', route: '/gallery/ladies/couple-ring' },
     { name: 'Dorla', route: '/gallery/ladies/dorla' },
-    { name: 'Kudke', route: '/gallery/ladies/kudke' },
-    { name: 'Ladies Kada', route: '/gallery/ladies/ladies-kada' },
+     { name: 'Earrings', route: '/gallery/ladies/earrings' },
+    { name: 'Ladies Ring', route: '/gallery/ladies/ladies-ring' },
+     { name: 'Necklace', route: '/gallery/ladies/necklace' },
     { name: 'Patlya', route: '/gallery/ladies/patlya' },
-    { name: 'Thushi', route: '/gallery/ladies/thushi' },
     { name: 'Pendents', route: '/gallery/ladies/pendents' },
+    { name: 'Rani Har', route: '/gallery/ladies/rani-har' },
+    { name: 'Thushi', route: '/gallery/ladies/thushi' },
     { name: 'Tode', route: '/gallery/ladies/tode' },
-    { name: 'Vatya', route: '/gallery/ladies/vatya' }
+    { name: 'Vatya', route: '/gallery/ladies/vatya' },
+    { name: 'Vel', route: '/gallery/ladies/vel' }
   ];
 
   toggleSidebar() {
