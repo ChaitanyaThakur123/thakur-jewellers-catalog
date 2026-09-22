@@ -1,51 +1,27 @@
+
 <div class="homepage">
-  <!-- SIDEBAR -->
-  <div class="sidebar" [class.open]="isSidebarOpen">
-    <div class="sidebar-header">
-      <h2>Thakur Jewellers</h2>
-
-      <button class="close-btn" (click)="closeSidebar()">×</button>
-    </div>
-
-    <!-- GENTS MENU -->
-    <div class="menu-section">
-      <h3>Gents Collection</h3>
-
-      <a *ngFor="let item of gentsMenu" [routerLink]="item.route" (click)="closeSidebar()">
-        {{ item.name }}
-      </a>
-    </div>
-
-    <!-- LADIES MENU -->
-    <div class="menu-section">
-      <h3>Ladies Collection</h3>
-
-      <a *ngFor="let item of ladiesMenu" [routerLink]="item.route" (click)="closeSidebar()">
-        {{ item.name }}
-      </a>
-    </div>
-  </div>
-
-  <!-- OVERLAY -->
-  <div class="overlay-bg" *ngIf="isSidebarOpen" (click)="closeSidebar()"></div>
 
   <!-- HERO SECTION -->
   <section class="hero-section">
+
     <!-- TOP NAVBAR -->
     <div class="top-navbar">
-      <button class="menu-btn" (click)="toggleSidebar()">☰</button>
 
-      <h2>Thakur Jewellers</h2>
-       <!-- RIGHT SIDE LOGO -->
-  <div class="navbar-right">
+      <div class="navbar-left">
+        <button class="menu-btn" (click)="toggleSidebar()">☰</button>
 
-    <img
-      src="assets/logos/logo.png"
-      alt="TJY Logo"
-      class="navbar-logo"
-    />
+        <h2>Thakur Jewellers</h2>
+      </div>
 
-  </div>
+      <!-- RIGHT SIDE LOGO -->
+      <div class="navbar-right">
+        <img
+          src="assets/logos/logo.png"
+          alt="TJY Logo"
+          class="navbar-logo"
+        />
+      </div>
+
     </div>
 
     <!-- HERO CONTENT -->
@@ -54,34 +30,178 @@
 
       <p>Premium 22K Gold Jewellery Collection</p>
     </div>
+
   </section>
+
+
+  <!-- COLLECTIONS SECTION -->
+  <section class="collections-section">
+
+    <div class="collections-heading">
+      <span class="section-small-title">EXPLORE OUR COLLECTION</span>
+
+      <h2>Jewellery Collections</h2>
+
+      <p>
+        Discover our exclusive collection of jewellery for every occasion.
+        Select a category below to explore our designs.
+      </p>
+    </div>
+
+
+    <!-- GENTS COLLECTION -->
+    <div class="collection-group">
+
+      <h3 class="collection-title">
+        <span>Gents Collection</span>
+      </h3>
+
+      <div class="collection-grid">
+
+        <a
+          *ngFor="let item of gentsMenu"
+          [routerLink]="item.route"
+          class="collection-card"
+        >
+          <div class="collection-card-content">
+            <span class="collection-icon">✦</span>
+
+            <h4>{{ item.name }}</h4>
+
+            <span class="view-collection">
+              View Collection →
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- LADIES COLLECTION -->
+    <div class="collection-group ladies-group">
+
+      <h3 class="collection-title">
+        <span>Ladies Collection</span>
+      </h3>
+
+      <div class="collection-grid">
+
+        <a
+          *ngFor="let item of ladiesMenu"
+          [routerLink]="item.route"
+          class="collection-card"
+        >
+          <div class="collection-card-content">
+            <span class="collection-icon">✦</span>
+
+            <h4>{{ item.name }}</h4>
+
+            <span class="view-collection">
+              View Collection →
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" [class.open]="isSidebarOpen">
+
+    <div class="sidebar-header">
+
+      <h2>Thakur Jewellers</h2>
+
+      <button
+        class="close-btn"
+        (click)="closeSidebar()"
+        aria-label="Close menu"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <!-- SIDEBAR INFORMATION -->
+    <div class="sidebar-content">
+
+      <p>
+        Explore our jewellery collections directly from the home page.
+      </p>
+
+      <button
+        class="sidebar-close-action"
+        (click)="closeSidebar()"
+      >
+        Explore Collections
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- OVERLAY -->
+  <div
+    class="overlay-bg"
+    *ngIf="isSidebarOpen"
+    (click)="closeSidebar()"
+  ></div>
+
 
   <!-- CONTACT SECTION -->
   <section class="contact-section">
+
     <h2>Contact Thakur Jewellers</h2>
 
     <div class="contact-buttons">
-     <a href="https://wa.me/919822439831" target="_blank" class="whatsapp-btn">
-  Chat on WhatsApp
-</a>
 
-      <a href="tel:+917020107022" class="call-btn"> Call Thakur Jewellers </a>
+      <a
+        href="https://wa.me/919822439831"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-btn"
+      >
+        Chat on WhatsApp
+      </a>
+
+      <a
+        href="tel:+917020107022"
+        class="call-btn"
+      >
+        Call Thakur Jewellers
+      </a>
+
     </div>
+
   </section>
+
 
   <!-- MAP SECTION -->
   <section class="map-section">
+
     <h2>Visit Our Store</h2>
-     <div class="map-container">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.179344040433!2d74.48720817523012!3d20.04292938137113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc38c83ae68f6f%3A0xa0b44b4dab0735d7!2sThakur%20Jewellers!5e0!3m2!1sen!2sin!4v1779141277413!5m2!1sen!2sin"
-      width="600"
-      height="450"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+
+    <div class="map-container">
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.179344040433!2d74.48720817523012!3d20.04292938137113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdc38c83ae68f6f%3A0xa0b44b4dab0735d7!2sThakur%20Jewellers!5e0!3m2!1sen!2sin!4v1779141277413!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+
     </div>
+
   </section>
+
 </div>

@@ -19,11 +19,14 @@
 
     <div
       class="gallery-card"
-      *ngFor="let image of images"
-      (click)="openImage(image)"
+      *ngFor="let image of images; let i = index"
+      (click)="openImage(image, i)"
     >
 
-      <img [src]="image" alt="Jewellery Image" />
+      <img
+        [src]="image"
+        alt="Jewellery Image"
+      />
 
     </div>
 
@@ -34,28 +37,57 @@
   <div
     class="image-viewer"
     *ngIf="isViewerOpen"
+    (click)="closeViewer()"
   >
 
+    <!-- CLOSE BUTTON -->
     <button
       class="close-viewer"
-      (click)="closeViewer()"
+      (click)="closeViewer(); $event.stopPropagation()"
+      aria-label="Close"
     >
       ×
     </button>
 
-      <!-- DOWNLOAD BUTTON -->
+
+    <!-- PREVIOUS IMAGE -->
+    <button
+      class="navigation-btn previous-btn"
+      (click)="previousImage(); $event.stopPropagation()"
+      aria-label="Previous Image"
+    >
+      ❮
+    </button>
+
+
+    <!-- IMAGE -->
+    <img
+      [src]="selectedImage"
+      class="viewer-image"
+      alt="Jewellery Image"
+      (click)="$event.stopPropagation()"
+    />
+
+
+    <!-- NEXT IMAGE -->
+    <button
+      class="navigation-btn next-btn"
+      (click)="nextImage(); $event.stopPropagation()"
+      aria-label="Next Image"
+    >
+      ❯
+    </button>
+
+
+    <!-- DOWNLOAD BUTTON -->
     <a
       [href]="selectedImage"
       download
       class="download-btn"
+      (click)="$event.stopPropagation()"
     >
       ⬇ Download
     </a>
-    
-    <img
-      [src]="selectedImage"
-      class="viewer-image"
-    />
 
   </div>
 
